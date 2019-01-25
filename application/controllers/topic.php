@@ -184,7 +184,6 @@ class Topic extends CI_Controller {
     }else{
       echo "<script>alert('오류');</script>";
     }
-    //CKeditor4버전 이상 부터는 콜백 함수가 아닌 json으로 보내주기 때문에 성공했을시 다시 editor로 넘겨줄 것을 echo 에 찍혀 있는 것처럼 보내야 함
   }
   //update
   public function contentUpdate_form($num){
