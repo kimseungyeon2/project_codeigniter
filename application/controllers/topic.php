@@ -170,43 +170,6 @@ class Topic extends CI_Controller {
       $this->tools->checkGo('허용된 사용자가 아닙니다.','/project/index.php/topic/main/1');
     }
   }
-  /*
-  public function contentInsert(){
-    $id = $this->tools->readSessionVar('uId');
-    $title = $this->tools->requestValue('title');
-    $content = $this->tools->requestValue('content');
-    $kind = $this->tools->requestValue('kinds');
-    $url = $this->tools->requestValue('url');
-    $kinds ='';
-    $kindsNum ='';
-    for ($i=0; $i <count($kind) ; $i++) {
-      $kinds = $kinds.'/'.$kind[$i];
-      $kindsNum = $kindsNum.'/'.'1';
-    }p
-    if($id){
-      if($title&&$content&&$kinds&&$url){
-        if($_FILES["firstImg"]["error"] == UPLOAD_ERR_OK){
-          $tnamePicture = $_FILES["firstImg"]["tmp_name"];
-          $fnamePicture = $_FILES["firstImg"]["name"];
-          $save_namePicture = iconv("utf-8","cps949",$fnamePicture);
-          if(move_uploaded_file($tnamePicture,"files/$save_namePicture")){
-            $this->content_model->insertContent($id,$title,$save_namePicture,$content,$kinds,$url,$kindsNum);
-            $this->content_model->insertContentChart($id,$title,$kind);
-            $this->tools->checkGo('작성되었습니다.','/project/index.php/topic/main/1');
-          }else{
-            $this->tools->checkGo('이미지를 채워 주세요','/project/index.php/topic/main/1');
-          }
-        }else{
-          $this->tools->checkGo('이미지 에러','/project/index.php/topic/main/1');
-        }
-      }else{
-        $this->tools->checkGo('빈칸을 채워주세요','/project/index.php/topic/main/1');
-      }
-    }else{
-      $this->tools->checkGo('허용된 사용자가 아닙니다.','/project/index.php/topic/main/1');
-    }
-  }
-  */
   public function contentInsert_file(){//ckditor의 이미지 업로드를 위한 부분
     if($_FILES["upload"]["error"] == UPLOAD_ERR_OK){
       $tnamePicture = $_FILES["upload"]["tmp_name"];
